@@ -1,0 +1,95 @@
+@use './../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sb-root) {
+   .resultSkeleton {
+      width: 100%;
+   
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      
+      .skeletonContent {
+         flex-grow: 1;
+   
+         display: flex;
+         flex-direction: column;
+         gap: 8px;
+   
+         .skeletonTitle {
+            width: 60%;
+            height: 20px;
+            margin-bottom: 12px;
+         }
+   
+         .skeletonDescription {  
+            width: 100%;
+   
+            & + .skeletonDescription {
+               margin-top: 4px;
+               width: 90%;
+            }
+         }
+   
+         .skeletonUrl {
+            width: 40%;
+            margin-top: 12px;
+         }
+      }
+   
+      .skeletonImage {
+         width: 240px;
+         height: 100px;
+      }
+   
+      & + .resultSkeleton {
+         margin-top: 16px;
+      }
+   
+   
+   }
+   
+   .resultSkeletonGrid {
+      display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         gap: 40px;
+         justify-content: center;
+
+         @media screen and (min-width: variables.$mobile-breakpoint) {
+            grid-template-columns: repeat(2, 1fr);
+         }
+
+         @media screen and (min-width: variables.$tablet-breakpoint) {
+            grid-template-columns: repeat(3, 1fr);
+         }
+
+         @media screen and (min-width: variables.$desktop-breakpoint) {
+            grid-template-columns: repeat(4, 1fr);
+         }
+      
+      .gridView {
+         flex-direction: column;
+         align-items: center;
+         gap: 24px;
+      
+         .skeletonContent {
+            width: 100%;
+         }
+      }
+   
+      .resultSkeleton + .resultSkeleton {
+         margin-top: 0;
+      }
+   
+      .skeletonImage {
+         width: 100%;
+         height: 100px;
+      }
+   }
+   
+
+}

@@ -1,0 +1,139 @@
+@use '../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+:global(#sb-root) {
+   .recommendationsContainer {
+      &:has(.recommendationsList) {
+         margin-bottom: 24px;
+         padding: 10px 0 0;
+      }
+   }
+
+   .ollamaLoading {
+      position: fixed;
+      left: 20px;
+      bottom: 40px;
+      z-index: 100;
+
+      svg {
+         width: 20px;
+         height: 20px;
+         color: #7639e2;
+      }
+   }
+
+
+   .recommendationLabel {
+      background-color: #f0d7f7;
+      border-radius: 4px;
+      // border: 1px solid #ccabe2;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  
+      color: #50107e;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .6px;
+      line-height: 1;
+      margin: 0;
+      min-height: 22px;
+      padding: 4px 8px 4px 10px;
+      text-transform: uppercase;
+
+      position: absolute;
+      top: 0;
+      left: 10px;
+      translate: 0 -50%;
+      
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .newLabel {
+         background-color: #7639e2;
+         border-radius: 4px;
+         color: #fff;
+         font-size: 8px;
+         padding: 2px 6px;
+      }
+   }
+
+   .recommendationsList {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      &.grid {
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         gap: 20px;
+         justify-content: center;
+
+         @media screen and (min-width: variables.$mobile-breakpoint) {
+            grid-template-columns: repeat(2, 1fr);
+         }
+
+         @media screen and (min-width: variables.$tablet-breakpoint) {
+            grid-template-columns: repeat(3, 1fr);
+         }
+
+         @media screen and (min-width: variables.$desktop-breakpoint) {
+            grid-template-columns: repeat(4, 1fr);
+         }
+      }
+      
+      &.list {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+      }
+
+      li {
+         animation: fadeIn 0.5s ease-out;
+         
+         overflow: visible;
+         position: relative;
+         word-break: break-word;
+         height: 100%;
+
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+      }
+      
+      .recommendationContent {
+         padding: 20px;
+         padding-top: 25px;
+      }
+
+      .recommendationItem {
+         flex: 1;
+         box-shadow: rgba(0, 0, 0, 0.12) 0 5px 3px -3px, rgba(0, 0, 0, 0.1) 0 5px 2px -4px;
+         overflow: hidden;
+      }
+
+      .titleContainer {
+         display: flex;
+         align-items: center;
+         gap: 8px;  
+      }
+
+      .resultDescription :global(.highlight) {
+         font-weight: 500;
+      }
+
+   }
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(-30px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}

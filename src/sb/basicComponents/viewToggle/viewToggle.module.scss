@@ -1,0 +1,44 @@
+:global(#sb-root) {
+   .viewToggle {
+      flex-shrink: 0;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // gap: 4px;
+
+      border: 1px solid #dad4e2;
+      border-radius: 30px;
+      padding: 4px;
+
+      .viewToggleButton {
+         background-color: transparent;
+         border: none;
+         border-radius: 30px;
+         color: #7639e2;
+         cursor: pointer;
+         padding: 6px;
+         transition: all .2s linear;
+         
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         
+         &.active {
+            background-color: #7639e2;
+            color: #fff;
+            cursor: default;
+            padding: 6px 12px;
+         }
+
+         &:not(.active):hover {
+            opacity: .6;
+         }
+
+         svg {
+            width: 20px;
+            height: 20px;
+         }
+      }
+   }
+}

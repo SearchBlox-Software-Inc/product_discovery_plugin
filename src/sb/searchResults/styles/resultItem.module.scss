@@ -1,0 +1,201 @@
+@use './../../css/variables' as variables;
+
+
+// ==========================================================================================
+
+
+$result-base-color : #1f1f1f;
+$title-color: variables.$accent-color;
+$title-hover-color: #5c38a1;
+$url-color: #654d6b;
+
+$title-font-size: 14px;
+$description-font-size: 14px;
+$url-font-size: 12px;
+
+
+:global(#sb-root) {
+   .result {
+      background-color: #fff;
+      border: 1px solid #f2dcff;
+      border-radius: 16px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      color: $result-base-color;
+      height: 100%;
+      overflow: hidden;
+      padding: 20px;
+      word-break: break-word;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+
+      &.recommendation {
+         background-color: #fdf6ff;
+         background-image: linear-gradient(to bottom, #ffffff, #f8f3ff, #fdf6ff);
+         
+
+         // .resultThumbnailPlaceholder {
+         //    background-color: #ebebeb;
+         // }
+      }
+
+      
+      .resultContent {
+         height: 100%;
+         
+         
+         display: flex;
+         flex-direction: column;
+         // align-items: center;
+         gap: 16px;
+      }
+
+      .resultFields {
+         flex-grow: 1;
+      }
+
+      .resultThumbnailPlaceholder {
+         height: 100px;
+         width: 100%;
+         background-color: #f2f2f2;
+         border-radius: 8px;
+         
+         display: grid;
+         place-items: center;
+         
+         p {
+            color: #666;
+            font-size: 11px;
+            margin: 0;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            
+            svg {
+               stroke-width: 1.5;
+               width: 20px;
+               height: 20px;
+            }
+         }
+      }
+
+      .resultTitle {
+         color: $title-color;
+         font-size: $title-font-size;
+         margin: 0;
+         display: -webkit-box;
+         -webkit-line-clamp: 2;
+         line-clamp: 2;
+         -webkit-box-orient: vertical;
+         overflow: hidden;
+         word-break: break-word;
+         text-decoration: none;
+         transition: color 0.3s ease;
+         
+         &:hover {
+            color: $title-hover-color;
+            text-decoration: none;
+         }
+      }
+
+      .resultDescription {
+         font-size: $description-font-size;
+         line-height: 1.6;
+         margin: 0;
+
+         display: -webkit-box;
+         -webkit-line-clamp: 3;
+         line-clamp: 3;
+         -webkit-box-orient: vertical;
+         overflow: hidden;
+         font-size: 13px;
+         color: #666;
+         word-break: break-word;
+      }
+      
+      .resultUrl {
+         color: $url-color;
+         font-size: $url-font-size;
+         margin-bottom: 0;
+         margin-top: 10px;
+         word-break: break-word;
+
+         display: -webkit-box;
+         -webkit-line-clamp: 2;
+         line-clamp: 2;
+         -webkit-box-orient: vertical;
+         overflow: hidden;
+         word-break: break-word;
+      }
+      
+      .resultThumbnail {
+         color: currentColor;
+         cursor: pointer;
+         display: none;
+         flex-shrink: 0;
+         font-size: 12px;
+         
+         height: 100px;
+         width: 100%;
+         display: block;
+         
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+         }
+         
+      }
+      
+      .resultCategory {
+         color: #666;
+         font-size: 10px;
+         font-weight: 600;
+         line-height: 1;
+         margin: 0 0 8px;
+         text-transform: uppercase;
+         word-break: break-word;
+      }
+      
+      .resultPrice {
+         font-size: 20px;
+         font-weight: 600;
+         line-height: 1;
+         margin: 0;
+         word-break: break-word;
+      }
+
+      .priceContainer {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 10px;
+      }
+      
+      
+      &.gridView {
+         flex-direction: column;
+      }
+   
+      &.listView {
+         flex-direction: row;
+
+         .resultContent {
+            flex-grow: 1;
+         }
+
+
+         .resultThumbnail, .resultThumbnailPlaceholder {
+            flex-grow: 0;
+            max-width: 200px;
+            height: 100px;
+         }
+      }
+   }
+     
+}

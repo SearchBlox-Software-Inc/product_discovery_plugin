@@ -1,0 +1,63 @@
+@use './../../css/variables' as variables;
+
+
+@use './resultListHeader.module.scss';
+
+
+// ==========================================================================================  
+
+
+:global(#sb-root) {
+
+   .resultsAndFacetsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      @media screen and (min-width: variables.$tablet-breakpoint) {
+         gap: 25px;
+         flex-direction: row;
+         // justify-content: center;
+         align-items: flex-start;
+      }
+   }
+
+
+   .resultsContainer {
+      flex-basis: 78%;
+      flex-grow: 1;
+      word-wrap: break-word;
+   }
+
+   .resultsList {
+      margin: 0;
+      padding: 0;
+
+      &.grid {
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         gap: 32px;
+         justify-content: center;
+         
+         @media screen and (min-width: variables.$mobile-breakpoint) {
+            grid-template-columns: repeat(2, 1fr);
+         }
+         
+         @media screen and (min-width: variables.$tablet-breakpoint) {
+            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+         }
+         
+         @media screen and (min-width: variables.$desktop-breakpoint) {
+            grid-template-columns: repeat(4, 1fr);
+         }
+      }
+      
+      &.list {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+      }
+
+   }
+}
