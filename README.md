@@ -87,7 +87,7 @@ The plugin automatically adapts to your collection's content and provides a seam
 ## Configuration
 
 ### Product Discovery Collection
-- From the SearchBlox Admin Console, create a new collection of type Product Discovery. You can use product data in either JSON or CSV format.
+- From the SearchBlox Admin Console, create a new collection of type Product Discovery. You can use product data in either JSON or CSV format. Here are sample datasets in both formats: [CSV](https://github.com/SearchBlox-Software-Inc/searchblox-screenshots/blob/b926e82dc8c17b42500c4c2ebd9f7fd309414962/dataset/ecommerce/bestbuy_seo.csv) / [JSON](https://github.com/SearchBlox-Software-Inc/searchblox-screenshots/blob/b926e82dc8c17b42500c4c2ebd9f7fd309414962/dataset/ecommerce/bestbuy_seo.json).
 - Configure the unique field for the dataset. If using CSV, additional configuration may be required based on the file's formatting.
 
 ### Plugin Configuration
