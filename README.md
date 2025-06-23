@@ -8,6 +8,8 @@
   - [Local Development and Deployment](#local-development-and-deployment) 
   - [Upload search plugin](#upload-search-plugin)
 - [Configuration](#configuration)
+  - [Product Discovery collection](#product-discovery-collection)
+  - [Plugin configuration](#plugin-configuration)
   - [Product Fields](#product-fields)
 - [Code Summary and Overview](#code-summary-and-overview)
   - [Folder Structure](#folder-structure)
@@ -84,7 +86,13 @@ The plugin automatically adapts to your collection's content and provides a seam
 
 ## Configuration
 
-Configure the `pluginDomain` setting in `facet.js` if deploying to a different server. Create a Product Discovery collection and set its ID in the `collection` field. Configure other feature fields as required. 
+### Product Discovery Collection
+- From the SearchBlox Admin Console, create a new collection of type Product Discovery. You can use product data in either JSON or CSV format.
+- Configure the unique field for the dataset. If using CSV, additional configuration may be required based on the file's formatting.
+
+### Plugin Configuration
+
+Configure the `pluginDomain` setting in `facet.js` if deploying to a different server. Set the ID of your Product Discovery collection in the `collection` field. Configure other feature fields as required.
 
 For detailed documentation of all available configuration options, refer to the [configuration documentation](CONFIG_DOCUMENTATION.md).
 
